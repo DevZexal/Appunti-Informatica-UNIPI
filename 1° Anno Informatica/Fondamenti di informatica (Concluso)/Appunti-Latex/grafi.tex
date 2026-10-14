@@ -407,9 +407,33 @@ Per dimostrare che un grafo è un DAG, allora la stella di Kleene sugli archi ($
     \end{equation}
 \end{definition}
 \hspace{-15pt}In altre parole, se disponiamo i vertici lungo una linea orizzontale in base alla loro numerazione $\eta$, in ordine crescente, otteniamo che gli archi risultano tutti orientati da sinistra verso destra
+
+% /////////////////////////////////////////////////////////////////////
+% INSERIRE ESEMPIO DI ORDINAMENTO TOPOLOGICO
+% ////////////////////////////////////////////////////////////////////
+
+
+
+
+
 \begin{proposition}
     Ogni DAG ha almeno un ordinamento topologico, e ne possono esistere di più.
 \end{proposition}
+
+% ///////////////////////////////////////////////////
+% Dimostrazione
+% ///////////////////////////////////////////////////
+\begin{demostration}
+    Dimostriamo che ogni DAG ha almeno un ordinamento topologico.
+
+    \begin{itemize}
+        \item (1) So che ogni DAG ha almeno una sorgente $x$
+        \item (2) So che $G \smallsetminus \{ x \} $ non può avere cicli, quindi è ancora un DAG
+    \end{itemize}
+
+    Dato un DAG $G$: per (1) ho una sorgente $x$. Rimuoviamo $x$ da $G$ e inseriamola nell'ordinamento in prima posizione. Il grafo rimanete $G \smallsetminus \{ x \}$ è ancora un DAG, per (2) quindi posso estrarre una nuova sorgente $y$, inserirla dopo $x$, rimuoverla dal grafo e ripetere fino ad avere inserito tutti i nodi.
+    Ogni nodo è una sorgente al momento della rimozione, quindi ha archi uscenti solo verso i nodi residui, ovvero che vengono dopo nell'ordinamento. Quindi l'ordinamento è un ordinamento topologico. $\blacksquare$
+\end{demostration}
 
 \subsection{Grafo non orientato}
 \begin{definition}[Grafo non orientato]
